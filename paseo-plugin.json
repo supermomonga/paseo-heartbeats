@@ -1,0 +1,5 @@
+{
+  "id": "heartbeats",
+  "requirements": { "paseo": ">=0.15.0" },
+  "build": [["npm", "ci", "--include=dev"]]
+}
