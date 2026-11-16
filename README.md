@@ -10,6 +10,10 @@ paseo plugin add npm:paseo-heartbeats
 
 Git の場合: `paseo plugin add github:supermomonga/paseo-heartbeats`
 
+## 仕組み
+
+プラグイン SDK・`paseo schedule` CLI・Paseo の MCP ツールは、ほかのエージェントの Heartbeat を扱えない。そのため daemon 側のコード（`server/daemon.ts`）が、CLI と同じローカル認証（daemon ホームの `paseo.pid` と `local-credential`、または `PASEO_PASSWORD`）で自分の daemon に接続し、スケジュールの RPC を直接呼ぶ。経緯は [ADR 0002](docs/adr/0002-manage-heartbeats-through-a-direct-session-to-the-local-daemon.md) を参照。
+
 ## Development
 
 ```

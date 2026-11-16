@@ -1,0 +1,176 @@
+import { defineTranslations } from "@getpaseo/plugin/client";
+
+const en = {
+  pill: {
+    title: "Heartbeats",
+    single: "{{next}}",
+    multiple: "{{count}} · {{next}}",
+    singlePaused: "Paused",
+    multiplePaused: "{{count}} · Paused",
+  },
+  panel: {
+    title: "Heartbeats",
+    empty: "This session has no heartbeats.",
+    loading: "Loading…",
+    loadFailed: "Could not load the heartbeat.",
+    retry: "Retry",
+    unsaved: "Unsaved changes",
+  },
+  status: {
+    active: "Active",
+    paused: "Paused",
+    completed: "Completed",
+  },
+  run: {
+    running: "Running",
+    succeeded: "Succeeded",
+    failed: "Failed",
+  },
+  schedule: {
+    next: "Next {{time}}",
+    last: "Last {{time}}",
+    every: "Every {{interval}}",
+    lastRunFailed: "Last run failed",
+  },
+  field: {
+    name: "Name",
+    namePlaceholder: "Untitled",
+    prompt: "Prompt",
+    promptRequired: "The prompt cannot be empty.",
+    cron: "Cron expression",
+    cronHint: "minute hour day-of-month month day-of-week",
+    cronRequired: "Enter a cron expression.",
+    everyNotice: "Runs every {{interval}}. Enter a cron expression to change the cadence.",
+    timezone: "Time zone",
+    timezonePlaceholder: "Daemon local time",
+    timezoneRequired: "A time zone cannot be removed once set. Enter another time zone instead.",
+  },
+  action: {
+    save: "Save",
+    saving: "Saving…",
+    discard: "Discard",
+    pause: "Pause",
+    resume: "Resume",
+    runNow: "Run now",
+    delete: "Delete",
+    confirmDelete: "Delete this heartbeat? This cannot be undone.",
+    confirmDeleteAction: "Delete permanently",
+    cancel: "Cancel",
+  },
+  toast: {
+    saved: "Heartbeat saved",
+    paused: "Heartbeat paused",
+    resumed: "Heartbeat resumed",
+    runStarted: "Heartbeat run started",
+    runFinished: "Heartbeat run finished",
+    runFailed: "The heartbeat run failed",
+    deleted: "Heartbeat deleted",
+  },
+  details: {
+    title: "Details",
+    id: "ID",
+    created: "Created",
+    updated: "Updated",
+    maxRuns: "Max runs",
+    expires: "Expires",
+    none: "None",
+  },
+  runs: {
+    title: "Recent runs",
+    empty: "No runs yet.",
+    output: "Output",
+    error: "Error",
+    noOutput: "No output.",
+  },
+} as const;
+
+/** The English shape with any wording, so every locale has the same keys. */
+type Wording<Resource> = {
+  readonly [Key in keyof Resource]: Resource[Key] extends string ? string : Wording<Resource[Key]>;
+};
+
+const ja: Wording<typeof en> = {
+  pill: {
+    title: "Heartbeat",
+    single: "{{next}}",
+    multiple: "{{count}} · {{next}}",
+    singlePaused: "停止中",
+    multiplePaused: "{{count}} · 停止中",
+  },
+  panel: {
+    title: "Heartbeat",
+    empty: "このセッションに Heartbeat はありません。",
+    loading: "読み込み中…",
+    loadFailed: "Heartbeat を読み込めませんでした。",
+    retry: "再試行",
+    unsaved: "未保存の変更があります",
+  },
+  status: {
+    active: "有効",
+    paused: "一時停止中",
+    completed: "終了",
+  },
+  run: {
+    running: "実行中",
+    succeeded: "成功",
+    failed: "失敗",
+  },
+  schedule: {
+    next: "次回 {{time}}",
+    last: "前回 {{time}}",
+    every: "{{interval}} ごと",
+    lastRunFailed: "前回の実行は失敗",
+  },
+  field: {
+    name: "名前",
+    namePlaceholder: "名前なし",
+    prompt: "プロンプト",
+    promptRequired: "プロンプトは空にできません。",
+    cron: "cron 式",
+    cronHint: "分 時 日 月 曜日",
+    cronRequired: "cron 式を入力してください。",
+    everyNotice: "現在は {{interval}} ごとに実行されます。間隔を変えるには cron 式を入力してください。",
+    timezone: "タイムゾーン",
+    timezonePlaceholder: "daemon のローカル時刻",
+    timezoneRequired: "一度設定したタイムゾーンは消せません。別のタイムゾーンを入力してください。",
+  },
+  action: {
+    save: "保存",
+    saving: "保存中…",
+    discard: "変更を破棄",
+    pause: "一時停止",
+    resume: "再開",
+    runNow: "今すぐ実行",
+    delete: "削除",
+    confirmDelete: "この Heartbeat を削除しますか？元に戻せません。",
+    confirmDeleteAction: "削除する",
+    cancel: "キャンセル",
+  },
+  toast: {
+    saved: "Heartbeat を保存しました",
+    paused: "Heartbeat を一時停止しました",
+    resumed: "Heartbeat を再開しました",
+    runStarted: "Heartbeat の実行を開始しました",
+    runFinished: "Heartbeat の実行が終わりました",
+    runFailed: "Heartbeat の実行に失敗しました",
+    deleted: "Heartbeat を削除しました",
+  },
+  details: {
+    title: "詳細",
+    id: "ID",
+    created: "作成",
+    updated: "更新",
+    maxRuns: "最大実行回数",
+    expires: "有効期限",
+    none: "なし",
+  },
+  runs: {
+    title: "最近の実行",
+    empty: "まだ実行されていません。",
+    output: "出力",
+    error: "エラー",
+    noOutput: "出力はありません。",
+  },
+};
+
+export const messages = defineTranslations({ resources: { en, ja } });

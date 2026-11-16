@@ -13,6 +13,7 @@
   "type": "module",
   "files": [
     "paseo-plugin.json",
+    "OVERVIEW.md",
     "index.client.tsx",
     "index.server.ts",
     "client/",
@@ -27,10 +28,13 @@
     "prepack": "node scripts/pack-manifest.mjs prepack",
     "postpack": "node scripts/pack-manifest.mjs postpack"
   },
+  "dependencies": {
+    "@getpaseo/client": "0.15.4"
+  },
   "devDependencies": {
-    "@getpaseo/client": "0.15.4",
     "@getpaseo/plugin": "0.15.4",
     "@getpaseo/protocol": "0.15.4",
+    "@tanstack/react-query": "5.90.11",
     "@types/node": "22.18.3",
     "@types/react": "~19.2.0",
     "react": "19.1.0",
