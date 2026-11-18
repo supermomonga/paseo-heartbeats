@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="assets/icon.png" alt="" height="96" />
+
 # paseo-heartbeats
 
 *See and edit a session's heartbeats without leaving the session.*
@@ -10,6 +12,8 @@
 [![License](https://img.shields.io/github/license/supermomonga/paseo-heartbeats?style=flat-square)](LICENSE)
 
 [Features](#features) • [Installation](#installation) • [Usage](#usage) • [How it works](#how-it-works) • [Limitations](#limitations) • [Development](#development)
+
+<img src="assets/listing/1-overview.webp" alt="Heartbeats for Paseo: your agents' heartbeats, right in the session" width="800" />
 
 </div>
 
@@ -26,6 +30,17 @@ A *heartbeat* is a recurring prompt that Paseo sends to an existing agent on a c
 - **Command Center entry**: open the panel with "Heartbeats" while a session is selected.
 - **Stays on the machine**: the plugin talks only to the local daemon, with the same credential as the `paseo` CLI.
 - **English and Japanese UI**.
+
+<details>
+<summary>Screenshots</summary>
+
+![The composer pill and the list of the session's heartbeats](assets/listing/2-composer.webp)
+![Editing a heartbeat in the Explorer](assets/listing/3-edit.webp)
+![Pause, Run now, and Delete, with the delete confirmation](assets/listing/4-controls.webp)
+![Recent runs with their outcomes, an error, and the agent's final message](assets/listing/5-runs.webp)
+![Heartbeats in the Command Center](assets/listing/6-command-center.webp)
+
+</details>
 
 ## Installation
 
@@ -117,7 +132,9 @@ paseo plugin logs heartbeats
 | `server/heartbeat-service.ts`, `server/schedules.ts` | Selecting heartbeats among schedules, and converting them for the app |
 | `shared/heartbeats.ts` | RPC definitions and schemas shared by both sides |
 | `docs/adr/` | Architecture decision records |
-| `OVERVIEW.md` | Description for the plugin's listing page |
+| `OVERVIEW.md`, `OVERVIEW.zh-CN.md` | Description for the plugin's listing page, in English and Simplified Chinese |
+| `assets/` | Plugin icon and the images for the listing page |
+| `npm-shrinkwrap.json` | Lockfile. It ships in the npm package, so installs get the exact dependency tree that was reviewed |
 
 ### Releasing
 

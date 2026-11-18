@@ -1,5 +1,22 @@
 {
   "id": "heartbeats",
+  "name": "Heartbeats",
+  "description": "Shows a session's heartbeats in its composer, and lets you edit, pause, run, and review them in the side panel.",
+  "icon": "assets/icon.png",
+  "media": [
+    "assets/listing/1-overview.webp",
+    "assets/listing/2-composer.webp",
+    "assets/listing/3-edit.webp",
+    "assets/listing/4-controls.webp",
+    "assets/listing/5-runs.webp",
+    "assets/listing/6-command-center.webp"
+  ],
+  "translations": {
+    "zh-CN": {
+      "name": "心跳任务",
+      "description": "在会话的输入框旁显示该会话的心跳任务，并可在侧边面板中编辑、暂停、立即运行和查看运行记录。"
+    }
+  },
   "requirements": { "paseo": ">=0.15.0" },
   "build": [["npm", "ci", "--include=dev"]]
 }

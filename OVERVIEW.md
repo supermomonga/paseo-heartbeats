@@ -9,6 +9,8 @@ Sessions that have heartbeats get a pill in the composer, next to Tasks and Suba
 
 The same panel opens from the Command Center with "Heartbeats" while a session is selected.
 
+The plugin's interface is available in English and Japanese.
+
 ## How it works
 
 The plugin's daemon side reads and changes heartbeats through the daemon's schedule API. The plugin SDK, the `paseo schedule` CLI, and the Paseo MCP tools do not cover heartbeats of other agents. To reach that API, the plugin opens a session to its own daemon with the same local credential the `paseo` CLI uses: the endpoint in `paseo.pid` and the token in `local-credential` in the daemon home, or `PASEO_PASSWORD` when it is set. Nothing leaves the daemon machine.
@@ -17,7 +19,7 @@ Paseo does not announce schedule changes, so the app checks for changes every 30
 
 ## Requirements
 
-Paseo 0.15.0 or later, on the daemon and in the app.
+Paseo 0.15.0 or later, on the daemon and in the app. There is nothing else to set up: the plugin needs no accounts, tokens, or settings, and has no operating system requirements beyond Paseo's own.
 
 ## Limits
 
