@@ -1,6 +1,6 @@
 {
   "name": "paseo-heartbeats",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Shows a session's heartbeats in its composer, and lets you edit, pause, run, and review them in the side panel.",
   "keywords": [
     "paseo",
