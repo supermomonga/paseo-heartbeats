@@ -1,8 +1,11 @@
 {
   "name": "paseo-heartbeats",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Paseo plugin: show a session's heartbeats as a pill, with detail and editing in the side panel",
-  "keywords": ["paseo", "paseo-plugin"],
+  "keywords": [
+    "paseo",
+    "paseo-plugin"
+  ],
   "homepage": "https://github.com/supermomonga/paseo-heartbeats#readme",
   "bugs": "https://github.com/supermomonga/paseo-heartbeats/issues",
   "repository": {
@@ -21,7 +24,9 @@
     "shared/",
     "!**/*.test.ts"
   ],
-  "engines": { "node": ">=22.12.0" },
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.client.json",
     "test": "vitest run --passWithNoTests",
